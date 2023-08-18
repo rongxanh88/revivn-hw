@@ -1,5 +1,5 @@
 class EquipmentController < ApplicationController
   def index
-    render json: PickupSerializer.render(Pickup.all), status: :ok
+    render json: EquipmentSerializer.render(Equipment.all), status: :ok
   end
 end
