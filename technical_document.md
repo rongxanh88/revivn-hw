@@ -7,8 +7,8 @@ date and location
 
 ### Technical Requirements
 1. API endpoints needed
-  * POST /pickup_requests/equipment/{id}
-  * GET /pickup_requests/equipment/{id}
+  * POST /equipment/{id}/pickups
+  * GET /pickups
 2. Dashboard to submit a pickup, and to track the status of any pickup previously created.
 3. A piece of equipment can only have one pickup request
 
@@ -20,7 +20,7 @@ the appropriate systems so that the physical equipment is picked up, we are only
 
 ### Database Design
 
-pickup_requests
+pickups
 id serial primary key
 address text
 address_2 text

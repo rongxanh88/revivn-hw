@@ -3,4 +3,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  resources :equipment do
+    resources :pickups, only: :create
+  end
+
+  resources :pickups, only: :index
 end
