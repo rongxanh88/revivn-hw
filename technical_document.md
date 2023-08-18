@@ -9,6 +9,7 @@ date and location
 1. API endpoints needed
   * POST /equipment/{id}/pickups
   * GET /pickups
+  * GET /equipment
 2. Dashboard to submit a pickup, and to track the status of any pickup previously created.
 3. A piece of equipment can only have one pickup request
 
