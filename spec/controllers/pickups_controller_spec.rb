@@ -5,6 +5,18 @@ require 'rails_helper'
 describe PickupsController, type: :request do
   let(:body) { JSON.parse(response.body) }
 
+  describe '#index' do
+    let!(:pickups) { create_list(:pickup, 3) }
+
+    it 'returns all pickups and their status values' do
+      get "/pickups"
+
+      expect(response).to have_http_status(:ok)
+      expect(body.count).to eq 3
+      expect(body.first['status']).to_not be_nil
+    end
+  end
+
   describe '#create' do
     context 'success' do
       let(:equipment) { create(:equipment) }

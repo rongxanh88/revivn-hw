@@ -1,4 +1,8 @@
 class PickupsController < ApplicationController
+  def index
+    render json: PickupSerializer.render(Pickup.all), status: :ok
+  end
+
   def create
     pickup = Pickup.new(create_params)
     pickup.status = 'submitted'
