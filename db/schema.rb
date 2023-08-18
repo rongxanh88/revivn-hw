@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_18_212431) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_18_214132) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,4 +22,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_18_212431) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "pickups", force: :cascade do |t|
+    t.text "address"
+    t.text "address_2"
+    t.text "city"
+    t.text "state"
+    t.text "zip_code"
+    t.text "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "equipment_id"
+    t.index ["equipment_id"], name: "index_pickups_on_equipment_id"
+  end
+
+  add_foreign_key "pickups", "equipment"
 end
