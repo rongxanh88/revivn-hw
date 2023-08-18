@@ -34,7 +34,6 @@ updated_at timestamp
 
 equipment
 id serial primary key
-type
 serial_number text
 manufacturer text
 model text
