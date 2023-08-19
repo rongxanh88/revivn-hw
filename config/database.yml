@@ -22,10 +22,11 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: postgres
   password: password
+  database: revivn_hw_development
 
 development:
   <<: *default
-  database: revivn_hw_development
+  url: <%= ENV['DATABASE_URL'].gsub('?', '_development?') %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -82,4 +83,4 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
+  url: <%= ENV['DATABASE_URL'].gsub('?', '_production?') %>
