@@ -1,0 +1,1 @@
+This is the frontend for the schedule pickup API endpoints.

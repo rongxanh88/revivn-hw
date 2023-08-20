@@ -4,6 +4,7 @@ WORKDIR /app
 COPY Gemfile* .
 RUN bundle install
 COPY . .
+RUN rm -rf frontend
 EXPOSE 3000
 
 COPY entrypoint.sh /usr/bin/
