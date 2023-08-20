@@ -23,7 +23,7 @@ export default function SchedulePickup() {
       zip_code
     }
 
-    const response = await fetch(`http://localhost:3001/equipment/${equipment_id}/pickups`, {
+    const response = await fetch(`http://localhost:3000/equipment/${equipment_id}/pickups`, {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {

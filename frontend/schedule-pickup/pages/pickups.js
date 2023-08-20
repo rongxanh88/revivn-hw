@@ -6,7 +6,7 @@ export default function Pickups() {
 
   useEffect(() => {
     const getData = async () => {
-      const query = await fetch("http://localhost:3001/pickups")
+      const query = await fetch("http://localhost:3000/pickups")
       const response = await query.json()
       setPickups(response)
       console.log('response', response)

@@ -8,7 +8,7 @@ export default function Equipment() {
 
   useEffect(() => {
     const getData = async () => {
-      const query = await fetch("http://localhost:3001/equipment")
+      const query = await fetch("http://localhost:3000/equipment")
       const response = await query.json()
       setEquipment(response)
     }
