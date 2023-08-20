@@ -22,5 +22,15 @@ services:
       - 3000:3000
     depends_on:
       - postgres
+  frontend:
+    build:
+      context: /frontend/schedule-pickup
+      dockerfile: Dockerfile
+    links:
+      - app
+    ports:
+      - 3050:3000
+    depends_on:
+      - app
 volumes:
   postgres-data:
